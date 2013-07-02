@@ -60,7 +60,7 @@ directory node['supervisor']['log_dir'] do
 end
 
 case node['platform']
-when "debian", "ubuntu"
+when "debian", "ubuntu", "centos", "amazon"
   template "/etc/init.d/supervisor" do
     source "supervisor.init.erb"
     owner "root"
