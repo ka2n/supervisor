@@ -28,6 +28,7 @@ end
 
 python_pip "supervisor" do
   action :upgrade
+  package_name node['supervisor']['package_name'] if node['supervisor']['package_name']
   version node['supervisor']['version'] if node['supervisor']['version']
 end
 
